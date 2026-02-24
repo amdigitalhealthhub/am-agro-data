@@ -1,416 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.M Agro-Data Initiative | Bridging Health & Agriculture in Nigeria</title>
-    <style>
-        :root {
-            --primary-green: #1b5e20;
-            --secondary-green: #4caf50;
-            --accent-color: #fbc02d;
-            --dark-text: #2d3436;
-            --light-text: #636e72;
-            --light-bg: #f8fdf8;
-            --white: #ffffff;
-        }
-        
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-text);
-            background-color: var(--white);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A.M Agro-Data Initiative | Health-Driven Agricultural Intelligence</title>
 
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--primary-green);
-            letter-spacing: 0.5px;
-        }
-        .logo span { color: var(--dark-text); }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-            margin: 0;
-            padding: 0;
-        }
-        nav a {
-            text-decoration: none;
-            color: var(--dark-text);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-        nav a:hover { color: var(--secondary-green); }
+<style>
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(27, 94, 32, 0.85), rgba(27, 94, 32, 0.95)), url('images/hero-image.jpg'); 
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 120px 5%;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 800px;
-            margin: 0 auto 2.5rem auto;
-            opacity: 0.9;
-        }
-        .btn {
-            display: inline-block;
-            background: var(--accent-color);
-            color: var(--dark-text);
-            padding: 15px 35px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .btn:hover { 
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(251, 192, 45, 0.4);
-        }
+:root{
+--primary-green:#1b5e20;
+--secondary-green:#4caf50;
+--accent-color:#fbc02d;
+--dark-text:#2d3436;
+--light-text:#636e72;
+--light-bg:#f8fdf8;
+--white:#ffffff;
+}
 
-        /* General Layout */
-        section { padding: 80px 5%; }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-        }
-        h2.section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--primary-green);
-            margin-bottom: 15px;
-        }
-        p.section-subtitle {
-            text-align: center;
-            color: var(--light-text);
-            max-width: 700px;
-            margin: 0 auto 50px auto;
-            font-size: 1.1rem;
-        }
+body{
+margin:0;
+font-family:'Segoe UI',Tahoma,Verdana,sans-serif;
+color:var(--dark-text);
+line-height:1.9;
+background:#fff;
+}
 
-        /* Mission & Vision */
-        .mission-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        .mission-card {
-            background: var(--light-bg);
-            padding: 40px;
-            border-radius: 10px;
-            border-left: 5px solid var(--secondary-green);
-        }
-        .mission-card h3 { color: var(--primary-green); font-size: 1.5rem; margin-top: 0; }
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:1rem 5%;
+background:#fff;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:1000;
+}
 
-        /* Text Content blocks */
-        .text-content {
-            font-size: 1.1rem;
-            color: var(--light-text);
-        }
-        .text-content strong { color: var(--dark-text); }
+.logo{
+font-weight:800;
+font-size:1.5rem;
+color:var(--primary-green);
+}
 
-        /* Technology Stack (How it Works) */
-        .tech-section { background-color: var(--light-bg); }
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .step-card {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-            text-align: left;
-        }
-        .step-card:hover { transform: translateY(-5px); }
-        .step-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            background: var(--light-bg);
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-        .step-card h3 { color: var(--dark-text); font-size: 1.3rem; }
+nav ul{
+list-style:none;
+display:flex;
+gap:25px;
+margin:0;
+padding:0;
+}
 
-        /* Beneficiaries Section */
-        .beneficiary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            text-align: center;
-        }
-        .beneficiary-item {
-            padding: 30px;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-        }
-        .beneficiary-item h4 { color: var(--secondary-green); font-size: 1.2rem; margin-bottom: 10px;}
+nav a{
+text-decoration:none;
+color:var(--dark-text);
+font-weight:600;
+}
 
-        /* Leadership Section */
-        .team-section { background-color: var(--white); }
-        .team-profile {
-            background: var(--light-bg);
-            padding: 40px;
-            border-radius: 10px;
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            max-width: 900px;
-            margin: auto;
-        }
-        .team-photo {
-            width: 150px;
-            height: 150px;
-            background: url('images/about-image.jpg') center/cover;
-            border-radius: 50%;
-            border: 4px solid var(--secondary-green);
-        }
-        .team-info h3 { margin: 0; color: var(--primary-green); font-size: 1.6rem; }
-        .team-info h4 { margin: 5px 0 15px 0; color: var(--light-text); font-weight: normal; }
+.hero{
+background:
+linear-gradient(rgba(27,94,32,0.82),rgba(27,94,32,0.92)),
+url('images/hero-image.jpg');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+color:#fff;
+padding:160px 5%;
+text-align:center;
+}
 
-        /* Partnership Section */
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        .partnership-box {
-            border: 1px solid #e0e0e0;
-            padding: 40px;
-            border-radius: 10px;
-            background: var(--white);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-        }
-        .partnership-box h3 {
-            color: var(--light-text);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 0;
-        }
-        .partnership-box h4 {
-            font-size: 1.6rem;
-            color: var(--primary-green);
-            margin: 10px 0 20px 0;
-        }
-        .partner-link {
-            color: var(--primary-green);
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: border-bottom 0.3s;
-        }
-        .partner-link:hover { border-bottom: 2px solid var(--primary-green); }
+.hero h1{
+font-size:3.2rem;
+margin-bottom:20px;
+}
 
-        /* CTA Section */
-        .cta-section {
-            background: var(--primary-green);
-            color: var(--white);
-            text-align: center;
-            padding: 60px 5%;
-        }
-        .cta-section h2 { color: var(--white); margin-bottom: 20px; }
-        
-        /* Footer */
-        footer {
-            background: var(--dark-text);
-            color: var(--white);
-            text-align: center;
-            padding: 40px 5%;
-            font-size: 0.95rem;
-        }
-        footer p { opacity: 0.8; margin: 8px 0; }
-        .footer-link {
-            color: var(--secondary-green);
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .footer-link:hover { text-decoration: underline; }
-        .contact-link {
-            color: var(--white);
-            text-decoration: underline;
-            transition: color 0.3s;
-        }
-        .contact-link:hover { color: var(--secondary-green); }
+.hero p{
+max-width:950px;
+margin:auto;
+font-size:1.2rem;
+}
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            nav ul { display: none; } 
-            section { padding: 50px 5%; }
-            .team-profile { flex-direction: column; text-align: center; }
-        }
-    </style>
+.btn{
+background:var(--accent-color);
+padding:15px 35px;
+text-decoration:none;
+color:#000;
+font-weight:bold;
+border-radius:6px;
+display:inline-block;
+margin-top:30px;
+}
+
+section{
+padding:100px 5%;
+}
+
+.container{
+max-width:1150px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+color:var(--primary-green);
+font-size:2.5rem;
+margin-bottom:20px;
+}
+
+.section-subtitle{
+text-align:center;
+color:var(--light-text);
+max-width:850px;
+margin:auto;
+margin-bottom:60px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:35px;
+}
+
+.card{
+background:var(--light-bg);
+padding:40px;
+border-radius:12px;
+}
+
+.team-profile{
+display:flex;
+gap:40px;
+align-items:center;
+background:var(--light-bg);
+padding:40px;
+border-radius:12px;
+}
+
+.founder-image{
+width:200px;
+height:200px;
+background-image:url('images/about-image.jpg');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+border-radius:50%;
+border:6px solid var(--secondary-green);
+flex-shrink:0;
+}
+
+.team-text{
+flex:1;
+}
+
+.dashboard-frame{
+width:100%;
+height:450px;
+border:none;
+border-radius:12px;
+margin-top:40px;
+}
+
+.cta{
+background:var(--primary-green);
+color:#fff;
+text-align:center;
+padding:80px;
+}
+
+footer{
+background:#222;
+color:#fff;
+text-align:center;
+padding:50px;
+}
+
+footer a{
+color:#4caf50;
+text-decoration:none;
+}
+
+</style>
 </head>
+
 <body>
 
-    <nav>
-        <div class="logo">A.M <span>Agro-Data</span></div>
-        <ul>
-            <li><a href="#about">The Problem</a></li>
-            <li><a href="#solution">Our Technology</a></li>
-            <li><a href="#impact">Beneficiaries</a></li>
-            <li><a href="#team">Leadership</a></li>
-        </ul>
-    </nav>
+<nav>
+<div class="logo">A.M Agro-Data</div>
+<ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Technology</a></li>
+<li><a href="#dashboard">Dashboard</a></li>
+<li><a href="#team">Leadership</a></li>
+</ul>
+</nav>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Engineering Food Security Through Health Data</h1>
-            <p>A specialized initiative by A.M Digital Health Hub. We deploy advanced data analytics and mobile surveillance to guide targeted agricultural production in Bauchi State, Nigeria.</p>
-            <a href="#solution" class="btn">Explore Our Methodology</a>
-        </div>
-    </section>
+<section class="hero">
+<h1>Engineering Food Security Through Health Intelligence</h1>
+<p>
+The A.M Agro-Data Initiative is a data-driven agricultural intelligence system that integrates anonymized clinical nutrition data with crop production planning. 
+By aligning what communities grow with what their bodies biologically require, we establish a feedback loop between public health systems and agricultural ecosystems.
+</p>
+<a href="#solution" class="btn">Explore the Architecture</a>
+</section>
 
-    <section id="about" class="team-section">
-        <div class="container">
-            <div class="mission-grid">
-                <div class="mission-card">
-                    <h3>Our Mission</h3>
-                    <p>To eliminate the disconnect between rural agricultural output and community nutritional needs by transforming clinical health data into actionable, precision-farming intelligence.</p>
-                </div>
-                <div class="mission-card">
-                    <h3>Our Vision</h3>
-                    <p>A resilient Northern Nigeria where every crop planted is strategically chosen to eradicate hidden hunger, optimize health outcomes, and empower local farmers economically.</p>
-                </div>
-            </div>
+<section id="problem">
+<div class="container">
+<h2 class="section-title">The Structural Nutrition Gap</h2>
+<p class="section-subtitle">
+Agricultural output alone does not guarantee improved health outcomes. The real challenge lies in aligning production with biological need.
+</p>
 
-            <h2 class="section-title">The "Hidden Hunger" Crisis</h2>
-            <p class="section-subtitle">Why producing more food isn't enough to solve malnutrition.</p>
-            
-            <div class="text-content" style="max-width: 900px; margin: auto; text-align: justify;">
-                <p>In regions like Azare, Bauchi State, we face a paradox: communities are surrounded by active agriculture, yet rural clinics consistently record high rates of micronutrient deficiencies, stunted growth, and anemia. This phenomenon, known as <strong>"hidden hunger,"</strong> occurs when caloric intake is sufficient, but nutritional value is critically low.</p>
-                <p>Historically, agricultural planning has focused purely on yield and economic value, ignoring the specific health deficits of the population consuming the food. <strong>We realized that health data should not just be archived in hospital databases—it is the missing blueprint for agricultural strategy.</strong></p>
-            </div>
-        </div>
-    </section>
+<div class="grid">
 
-    <section id="solution" class="tech-section">
-        <div class="container">
-            <h2 class="section-title">Our AgTech Architecture</h2>
-            <p class="section-subtitle">How we create a continuous feedback loop from the clinic to the farm.</p>
-            
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-icon">📱</div>
-                    <h3>1. Mobile Health Surveillance</h3>
-                    <p class="text-content">We utilize <strong>Open Data Kit (ODK)</strong> and proprietary mobile tools at our digital health hubs to capture real-time, anonymized data on nutritional deficiencies across different rural wards.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">💻</div>
-                    <h3>2. Data Processing & Analytics</h3>
-                    <p class="text-content">Data is securely routed into a robust database architecture. Using <strong>Python-based analytics</strong> and customized algorithms, we map geographical hotspots of specific micronutrient needs.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">🌱</div>
-                    <h3>3. Precision Crop Directives</h3>
-                    <p class="text-content">This "Nutritional Intelligence" is translated into localized planting directives. We advise our farming partners on precisely which bio-fortified crops to cultivate to directly address the identified clinical deficits in their market.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<h3>Health-Agriculture Disconnection</h3>
+<p>
+Across many rural regions, agricultural planning is driven by seasonal patterns and market prices rather than population health data. 
+Clinics consistently record cases of micronutrient deficiencies, yet this information does not influence farming strategies. 
+This systemic disconnect perpetuates hidden hunger despite active food production.
+</p>
+</div>
 
-    <section id="impact" class="team-section">
-        <div class="container">
-            <h2 class="section-title">Target Beneficiaries & Impact</h2>
-            <p class="section-subtitle">A sustainable model designed for holistic community empowerment.</p>
-            
-            <div class="beneficiary-grid">
-                <div class="beneficiary-item">
-                    <h4>🌾 Smallholder Farmers</h4>
-                    <p class="text-content">By providing data on exactly what crops are in high nutritional demand locally, we reduce post-harvest waste and guarantee a ready market for their produce, increasing their economic stability.</p>
-                </div>
-                <div class="beneficiary-item">
-                    <h4>👩‍👧 Vulnerable Households</h4>
-                    <p class="text-content">Directly combating maternal anemia and childhood stunting by ensuring the local food supply is rich in missing micronutrients like Iron and Vitamin A.</p>
-                </div>
-                <div class="beneficiary-item">
-                    <h4>🚀 Scalability Roadmap</h4>
-                    <p class="text-content">Beginning with a localized pilot in Azare alongside Fadaku Agro, our software infrastructure is designed to scale across Bauchi State and eventually integrate into wider Northern Nigerian agricultural policies.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<h3>Unutilized Health Intelligence</h3>
+<p>
+Health facilities generate valuable anonymized data on anemia, vitamin deficiencies, maternal nutrition, and child growth indicators. 
+Without an integrated system to translate these insights into agricultural action, the data remains archived instead of driving impact.
+</p>
+</div>
 
-    <section id="team" class="tech-section">
-        <div class="container">
-            <h2 class="section-title">Leadership & Expertise</h2>
-            <p class="section-subtitle">The technical foundation driving the A.M Agro-Data Initiative.</p>
-            
-            <div class="team-profile">
-                <div class="team-photo"></div> <div class="team-info">
-                    <h3>Hassan Al-Mujtaba Ja’afar</h3>
-                    <h4>Founder & Lead Innovator</h4>
-                    <p class="text-content">Hassan represents the crucial intersection of clinical health and software engineering. Holding a strong background in <strong>Health Information Management</strong> and multiple qualifications in Information Technology, he specializes in leveraging code to solve grassroots biological challenges.</p>
-                    <p class="text-content">With hands-on expertise in software development (C++, Python, HTML/CSS) and database architecture (MySQL), Hassan architected the A.M Digital Health Hub and leads the technical deployment of this Agro-Data initiative, ensuring seamless data integration from rural clinics directly to agricultural producers.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<h3>Systemic Transformation Opportunity</h3>
+<p>
+By embedding clinical intelligence into agricultural decision-making, communities can shift from reactive health interventions to preventive nutritional planning rooted in production systems.
+</p>
+</div>
 
-    <section id="partners" class="team-section">
-        <div class="container">
-            <h2 class="section-title">Ecosystem Implementation Partners</h2>
-            <p class="section-subtitle">Translating code and data into real-world food production requires strong infrastructure.</p>
-            
-            <div class="partners-grid">
-                <div class="partnership-box">
-                    <h3>Implementation & Cultivation Partner</h3>
-                    <h4>FADAKU AGRO AND ENTERPRISES</h4>
-                    <p class="text-content">Based in Azare, Bauchi State, Fadaku Agro serves as our primary operational testing ground. Their established agricultural capabilities allow us to rapidly pilot our data-driven planting strategies, shifting from traditional crop cycles to nutrition-optimized harvests.</p>
-                </div>
-                
-                <div class="partnership-box">
-                    <h3>Renewable Energy Partner</h3>
-                    <h4><a href="https://energyassuredpro.com/" target="_blank" class="partner-link">Energy Assured Pro</a></h4>
-                    <p class="text-content">Sustainable agriculture and continuous data infrastructure require reliable power. Energy Assured Pro provides the crucial renewable energy solutions needed to keep our rural health-data collection hubs online and to power advanced, off-grid farming technologies.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
+</div>
+</section>
 
-    <section class="cta-section">
-        <div class="container">
-            <h2>Partner With Us in Redefining Food Security</h2>
-            <p style="margin-bottom: 30px; font-size: 1.1rem;">We are actively seeking strategic grant partnerships, funding, and agricultural stakeholders to scale this initiative.</p>
-            <a href="mailto:agro_data@amdigitalhealthhub.com.ng" class="btn" style="background: var(--white); color: var(--primary-green);">Contact the Innovation Team</a>
-        </div>
-    </section>
+<section id="solution" style="background:#f8fdf8">
+<div class="container">
+<h2 class="section-title">Integrated Digital Infrastructure</h2>
+<p class="section-subtitle">
+A scalable architecture that transforms health data into agricultural directives.
+</p>
 
-    <footer>
-        <div class="container">
+<div class="grid">
+
+<div class="card">
+<h3>Secure Data Collection Layer</h3>
+<p>
+Mobile data collection systems capture structured nutrition indicators at community level. 
+Data is encrypted, anonymized, validated, and securely transmitted to centralized servers for structured storage and processing.
+</p>
+</div>
+
+<div class="card">
+<h3>Analytics & Intelligence Engine</h3>
+<p>
+Advanced backend systems analyze nutritional patterns, detect trends, and generate localized intelligence outputs. 
+These outputs identify priority micronutrient gaps and recommend agricultural responses.
+</p>
+</div>
+
+<div class="card">
+<h3>Agricultural Output Translation</h3>
+<p>
+The intelligence engine converts analytical findings into practical crop guidance aligned with ecological suitability and local production capacity.
+This ensures agricultural output directly addresses documented nutritional deficiencies.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="dashboard">
+<div class="container">
+<h2 class="section-title">Live Intelligence Dashboard</h2>
+<p class="section-subtitle">
+A dynamic visualization interface connecting health indicators with agricultural intelligence outputs.
+</p>
+
+<iframe class="dashboard-frame" src="dashboard.html"></iframe>
+
+<p>
+The dashboard is designed to integrate with live database systems and APIs, enabling real-time monitoring of nutrition trends, production responses, and intervention effectiveness. 
+This transparency strengthens collaboration between health professionals, farmers, policymakers, and development partners.
+</p>
+
+</div>
+</section>
+
+<section id="team">
+<div class="container">
+<h2 class="section-title">Leadership</h2>
+
+<div class="team-profile">
+
+<div class="founder-image"></div>
+
+<div class="team-text">
+
+<h3>Hassan Al-Mujtaba Ja’afar</h3>
+<h4>Founder & Lead Innovator</h4>
+
+<p>
+Hassan is a Health Data and Technology Specialist dedicated to building digital systems that connect biological intelligence with agricultural production frameworks. 
+His work focuses on designing scalable infrastructures capable of transforming community-level data into strategic planning tools.
+</p>
+
+<p>
+Through A.M Digital Health Hub, he leads the architecture, deployment, and integration of health-agriculture intelligence platforms that strengthen both food systems and public health ecosystems.
+</p>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="cta">
+<h2>Strategic Collaboration & Partnership</h2>
+<p>
+We welcome collaboration with agricultural institutions, development agencies, research bodies, and impact-driven partners committed to systemic transformation of food and health ecosystems.
+</p>
+<a href="mailto:agro_data@amdigitalhealthhub.com.ng" class="btn">Email the Innovation Team</a>
+</section>
+
+<footer>
+    <div class="container">
             <h3 style="margin-top: 0;">A.M Agro-Data Initiative</h3>
             <p>A specialized division of <a href="http://www.amdigitalhealthhub.com.ng" target="_blank" class="footer-link">A.M Digital Health Hub</a></p>
             <p>Azare, Bauchi State, Nigeria.</p>
@@ -418,9 +340,8 @@
                 Email: <a href="mailto:agro_data@amdigitalhealthhub.com.ng" class="contact-link">agro_data@amdigitalhealthhub.com.ng</a> | 
                 Phone: <a href="tel:+2348069805724" class="contact-link">+234 806 980 5724</a>
             </p>
-        </div>
-    </footer>
+    </div>
+</footer>
 
 </body>
-  </html>
-
+</html>
